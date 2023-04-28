@@ -1,0 +1,15 @@
+version: '3'
+services:
+  reactapp:
+    container_name: reactappcontainer
+    # build: ./
+    image: ${IMAGE}:${IMAGE_TAG}
+    volumes:
+      - ./reactapp:/code
+    ports:
+      - 80:80  
+    expose:
+      - 80
+networks:
+  default:
+    name: deployapp_default
