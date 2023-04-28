@@ -59,9 +59,9 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'githubpat', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
                         // git config here for the first time run
-                        sh 'git config --global user.email "mahdijenkins@jenkins.com"'
-                        sh 'git config --global user.name "mahdijenkins"'
-                        sh "git remote set-url origin https://${USER}:${PASS}@github.com/Mahdiboudaouara/besbesClient.git"
+                        sh 'git config --global user.email "besbesjenkins@jenkins.com"'
+                        sh 'git config --global user.name "besbesjenkins"'
+                        sh "git remote set-url origin https://${USER}:${PASS}@github.com/oussemabes/DevOps-Application-frontend-Deployment.git"
                         sh 'git add .'
                         sh 'git commit -m "ci: version bump"'
                         sh "git push origin HEAD:${BRANCH_NAME}"
